@@ -2,6 +2,11 @@ const { app, BrowserWindow, ipcMain, Menu } = require('electron');
 const path = require('path');
 const functions = require('./functions.js')
 
+require('update-electron-app')({
+  updateInterval: '5 minutes',
+  logger: require('electron-log')
+})
+
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
