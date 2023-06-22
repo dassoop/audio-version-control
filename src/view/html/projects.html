@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Abril | Projects</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/59b01b883c.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="p-3">
+        <h1>Projects</h1>
+        <hr>
+        <p class="error-message" id="error-projects"></p>
+        <div id="form-create-project">
+          <h5>New Project</h5>
+          <div>
+            <p class="form-label">Project Name</p>
+            <input id="input-project-name" type="text">
+          </div>
+          <div>
+            <p class="form-label">Project Directory</p>
+            <span class="dir-chooser">
+              <button id="btn-chooseFolder" onclick="chooseDirectory()">Choose Folder</button>
+              <p id="input-project-path"></p>
+            </span>
+          </div>
+          <div>
+            <p class="form-label">Project Name Pattern</p>
+            <span class="format-chooser">
+              <select id="select-delimiter" onchange="changeDelimiter(event)">
+                <option>_</option>
+                <option>-</option>
+                <option> </option>
+              </select>
+              <button id="btn-addField" onclick="addUserField()"><i class="fa-solid fa-plus"></i></button>
+              <button id="btn-removeField" onclick="removeUserField()"><i class="fa-solid fa-minus"></i></button>
+              <p id="format-fileFormat">Name</p>
+              <span id="format-userData">
+                <p class="display-delimiter">_</p>
+                <input class="input-userData" type="text" onkeyup="updateUserData()">
+              </span>
+              <p>.ext</p>
+            </span>
+          </div>
+          <div class="form-confirm"> 
+            <button id="btn-create-project" onclick="createProject()">Create Project</button>
+          </div>
+        </div>
+        <hr>
+        <h5>Project List</h5>
+        <table id="table-projects">
+          <thead id="table-head-projects">
+    
+          </thead>
+          <tbody id="table-body-projects">
+    
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+
+    <script src="../js/projects.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>

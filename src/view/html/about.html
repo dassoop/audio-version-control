@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Abril | About</title>
+    <link rel="stylesheet" href="../css/index.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/59b01b883c.js" crossorigin="anonymous"></script>
+    <style>
+      .content
+      {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+      }
+        h5
+        {
+          letter-spacing: .25rem;
+        }
+        .header
+        {
+          margin-top: 1rem;
+        }
+        .body
+        {
+          margin-top: 1rem;
+        }
+        .body p
+        {
+          margin: 0;
+          margin-bottom: 1rem;
+        }
+        .body #label-version
+        {
+          color: darkgray;
+        }
+        .body a 
+        {
+          padding: .5rem;
+          margin-bottom: 1rem;
+          border: 1px solid darkgray;
+          background: white;
+          border-radius: 5px;
+          color: black;
+          text-decoration: none;
+          font-size: 1rem;
+        }
+        .body a:hover
+        {
+          background: darkgray;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="content">
+        <div class="header">
+          <h5>abril</h5>
+        </div>
+        <hr>
+        <div class="body">
+          <p id="label-version">version: </p>
+          <p id="display-version"></p>
+          <a href=""><i class="fa-brands fa-linkedin"></i> Contact</a>
+        </div>
+    </div>
+
+    <script>
+      const params = new URLSearchParams(location.search)
+      document.querySelector('#display-version').innerHTML = params.get("version")
+    </script>
+    <script src="../js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
