@@ -17,7 +17,7 @@ const createWindow = () => {
     minHeight: 600,
     resizable: true,
     backgroundColor: "#1c1c1c;",
-    icon: path.join(__dirname, 'assets/Logo.png'),
+    icon: "./assets/icon.png",
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -92,11 +92,11 @@ const createWindow = () => {
   Menu.setApplicationMenu(menu)
 
   ipcMain.handle('req', async (event, req) => {
-    res = 
-    {
-      error: null,
-      data: {}
-    }
+  res = 
+  {
+    error: null,
+    data: {}
+  }
 
     return functions.req(req, res)
   })

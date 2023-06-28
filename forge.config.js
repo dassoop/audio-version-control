@@ -1,11 +1,11 @@
-const path = require("path")
+const path = require("path");
 require('dotenv').config();
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 module.exports = {
   packagerConfig: 
   {
-    icon: path.join(__dirname, 'assets/Logo'),
+    icon: './src/assets/icon',
 
     osxSign: 
     {
@@ -31,6 +31,15 @@ module.exports = {
     {
       name: '@electron-forge/maker-zip',
       platforms: ['darwin'],
+    },
+
+    {
+      name: '@electron-forge/maker-dmg',
+      config: 
+      {
+        background: './assets/dmg-background.png',
+        format: 'ULFO'
+      }
     },
 
     {
